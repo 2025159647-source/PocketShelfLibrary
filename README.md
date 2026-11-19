@@ -1,6 +1,7 @@
 # Pocket Shelf – Personal Library Management System
 
-Live Website: View Pocket Shelf
+Live Website: https://2025159647-source.github.io/PocketShelfLibrary/
+
 GitHub Repository: https://github.com/2025159647-source/PocketShelfLibrary.git
 
 ## 1. Introduction
