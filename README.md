@@ -1,52 +1,174 @@
-# Pocket Shelf – Personal Library Manager (IMS566)
+# Pocket Shelf – Personal Library Management System
 
-## About
-Pocket Shelf is a small website to manage my own book collection. I lend my books to friends, family and colleagues, and this site helps me remember who has which book and when it must be returned.
+Live Website: View Pocket Shelf
+GitHub Repository: View Source Code
 
-No database is needed. All data is saved in the browser (localStorage).
+## 1. Introduction
 
-## How to Log In
-- Open `index.html` (or the GitHub Pages link)
+Pocket Shelf is a personal library management website developed to help users organise and manage their personal book collections. The system is designed for individuals who lend books to friends, family members, and colleagues.
+
+It provides a simple and convenient way to keep track of book collections, borrowers, borrowing records, and return dates. Users can easily identify which books are available, borrowed, or overdue.
+
+Pocket Shelf is developed using HTML, CSS, and JavaScript, with browser `localStorage` used to store data without requiring a database.
+
+## 2. System Objectives
+
+The main objectives of Pocket Shelf are to:
+
+- Organise personal book collections by genre.
+- Keep track of borrowed and returned books.
+- Record borrower information and borrowing history.
+- Monitor book return dates and identify overdue books.
+- Provide an easy-to-use interface for managing library records.
+
+## 3. System Features
+
+### 3.1 Login Page
+- Login using a username and password.
+- Autofill demo account for convenient access.
+- Show and hide password functionality.
+- Remember username option.
+- Display error messages for invalid login details.
+
+**Demo Account:**
 - Username: `admin`
 - Password: `admin123`
-- Tip: click **Autofill demo account** to fill them in automatically.
 
-## Pages
-| Page | What it does |
-|------|--------------|
-| **Dashboard** | Shows a summary: total books, borrowers, borrowed and overdue books, 5 colourful charts, and a table showing where every book is. |
-| **My Books** | List of all my books. I can add, edit, delete, search and filter them. |
-| **Shelves** | A picture of my bookshelves. Each genre has its own shelf. A dashed empty slot means the book is borrowed. |
-| **Borrowers** | List of people who borrow my books, and their borrowing history. |
-| **Lending** | Lend a book, mark it as returned, or extend the due date by 7 days. |
+### 3.2 Dashboard
+- Display total books and borrowers.
+- Show the number of borrowed and overdue books.
+- Provide five colourful charts for visualising library information.
+- Display a book summary table showing book locations and statuses.
+- Allow users to click dashboard cards and charts to access related pages with filters applied.
 
-## Book Status
-- **Borrowed**: the book is with someone and not yet due.
-- **Overdue**: the due date has passed and the book is not returned.
-- **Returned**: the book is back on my shelf.
+### 3.3 My Books
+- View the complete book collection.
+- Add new books.
+- Edit existing book information.
+- Delete book records.
+- Search, filter, and sort book information.
+- Export book records to CSV.
 
-Status is automatic. It changes by itself based on the due date.
+### 3.4 Shelves
+- Display books in a visual bookshelf layout.
+- Organise books according to their genres.
+- Assign different genres to individual shelves.
+- Use dashed empty slots to indicate books that are currently borrowed.
 
-## Main Features
-- Login page with error message, show/hide password and remember username
-- Books are arranged by genre on shelves (Shelf A = Mystery, Shelf B = Romance, and so on)
-- Click a card or chart to open the related page, already filtered
-- Search, filter and sort tables, and export to CSV
-- Alert when a book is overdue or due soon
-- Dark and light mode
-- Works on desktop and mobile
+### 3.5 Borrowers
+- View and manage borrower information.
+- Display borrowing records for each person.
+- Check individual borrowing history.
+- Identify books currently borrowed by each person.
 
-## Design
-- Brand colour: `#780228`, with soft pastel colours for charts and badges
-- Cute logo and picture banners
-- Font: Nunito
+### 3.6 Lending
+- Record new book lending transactions.
+- Mark borrowed books as returned.
+- Extend book return dates by seven days.
+- Monitor borrowing and return information.
 
-## Tools Used
-HTML, CSS, JavaScript, Bootstrap 5.3, Bootstrap Icons, Chart.js 4
+## 4. Book Status Management
 
-## Files
-- `index.html`: login page
-- `app.html`: main app
-- `css/style.css`: styles
-- `js/app.js`: all the logic
-- `images/`: logo and pictures
+Pocket Shelf automatically determines book statuses based on borrowing records and due dates.
+
+| Status | Description |
+|---|---|
+| Available | The book is currently on the user's shelf and available to borrow. |
+| Borrowed | The book is with a borrower and its due date has not passed. |
+| Overdue | The book has passed its due date and has not been returned. |
+| Returned | The borrowed book has been returned to the collection. |
+
+## 5. System Design and Interface
+
+Pocket Shelf uses a simple, friendly, and visually appealing interface to improve the user experience.
+
+The design includes:
+
+- **Primary Colour:** Burgundy (`#780228`).
+- **Additional Colours:** Soft pastel colours for charts and status badges.
+- **Typography:** Nunito font.
+- **Visual Elements:** Cute logo, picture banners, and illustrated bookshelf layouts.
+- **Display Modes:** Light mode and dark mode.
+- **Responsive Design:** Supports desktop and mobile devices.
+
+## 6. Technologies Used
+
+The following technologies and tools are used to develop Pocket Shelf:
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Structures the website content. |
+| CSS3 | Styles the website interface and layout. |
+| JavaScript | Handles system functionality and interactions. |
+| Bootstrap 5.3 | Provides responsive layouts and interface components. |
+| Bootstrap Icons | Provides icons for navigation and system features. |
+| Chart.js 4 | Creates interactive dashboard charts. |
+| localStorage | Stores system data in the browser without a database. |
+
+## 7. System Requirements
+
+To access Pocket Shelf, users need:
+
+- A desktop computer, laptop, tablet, or smartphone.
+- A modern web browser such as Google Chrome, Microsoft Edge, or Mozilla Firefox.
+- JavaScript enabled in the browser.
+
+No database installation or server-side programming is required for local use.
+
+## 8. How to Run the System
+
+**Step 1:** Download or clone the Pocket Shelf project folder.
+
+**Step 2:** Open the project folder using Visual Studio Code.
+
+**Step 3:** Locate and open `index.html` using a web browser. Alternatively, use the Live Server extension in Visual Studio Code.
+
+**Step 4:** Enter the demo login credentials:
+
+- Username: `admin`
+- Password: `admin123`
+
+**Step 5:** Click the Login button to access the Pocket Shelf dashboard.
+
+**Tip:** Click the **Autofill demo account** option on the login page to fill in the demo credentials automatically.
+
+## 9. Data Storage
+
+Pocket Shelf uses the browser's `localStorage` to save information locally.
+
+This allows users to retain their book records, borrower details, and lending transactions without connecting to an external database.
+
+**Important Notes:**
+- Data is stored in the browser used to access the system.
+- Data is not automatically synchronised between different devices or browsers.
+- Clearing browser storage may permanently remove saved system data.
+- This project uses simulated authentication and is intended for demonstration and educational purposes.
+
+## 10. Project Folder Structure
+
+The project is organised into the following folder structure:
+
+```text
+Pocket-Shelf/
+│
+├── index.html
+├── app.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── app.js
+│
+├── images/
+│   ├── logo
+│   └── picture banners
+│
+└── README.md
+```
+
+## 11. Conclusion
+
+Pocket Shelf provides a convenient way to manage a personal book collection and monitor book lending activities. By combining book organisation, borrower management, lending records, and automatic status updates in one website, the system helps users keep their personal library organised.
+
+The system is designed with a simple and responsive interface to provide a user-friendly experience across different devices. Overall, Pocket Shelf aims to make personal library management easier, more organised, and more enjoyable.
