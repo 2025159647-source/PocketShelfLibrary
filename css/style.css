@@ -1,0 +1,127 @@
+/* ===== Pocket Shelf theme - base colour #780228 + pastel accents ===== */
+:root{--brand:#780228;--brand-dark:#5a011e;--brand-soft:#f7e6eb;--sb-w:250px;
+--bs-primary:#780228;--bs-primary-rgb:120,2,40;--bs-link-color:#780228;--bs-link-hover-color:#5a011e;
+--bs-body-font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;--bs-body-font-size:.95rem}
+[data-bs-theme=dark]{--bs-link-color:#e58aa6;--bs-link-hover-color:#f0b0c3;--brand-soft:#3a0a17}
+body{font-variant-numeric:tabular-nums}
+/* ---- Buttons & forms: one size everywhere ---- */
+.btn{font-size:.9rem;font-weight:500}
+.btn-sm{--bs-btn-padding-y:.3rem;--bs-btn-padding-x:.7rem;--bs-btn-font-size:.85rem}
+.btn-primary{--bs-btn-bg:#780228;--bs-btn-border-color:#780228;--bs-btn-hover-bg:#5a011e;--bs-btn-hover-border-color:#5a011e;--bs-btn-active-bg:#5a011e;--bs-btn-active-border-color:#5a011e;--bs-btn-focus-shadow-rgb:120,2,40}
+.btn-outline-primary{--bs-btn-color:var(--bs-link-color);--bs-btn-border-color:var(--bs-link-color);--bs-btn-hover-bg:#780228;--bs-btn-hover-border-color:#780228;--bs-btn-hover-color:#fff;--bs-btn-active-bg:#5a011e;--bs-btn-active-border-color:#5a011e}
+.form-control,.form-select{font-size:.9rem}
+.form-select-sm{font-size:.85rem}
+.form-control:focus,.form-select:focus{border-color:var(--brand);box-shadow:0 0 0 .2rem rgba(120,2,40,.2)}
+.actions{display:flex;gap:.4rem;flex-wrap:nowrap}
+/* ---- Navbar ---- */
+.app-nav{background:var(--brand);position:sticky;top:0;z-index:1030;height:56px}
+.app-nav .navbar-brand,.app-nav .btn,.app-nav span{color:#fff}
+.app-nav .btn:hover{background:rgba(255,255,255,.15)}
+/* ---- Sidebar (fixed on desktop, slide-out on mobile) ---- */
+.sidebar{width:var(--sb-w);background:var(--bs-tertiary-bg)}
+@media(min-width:992px){.sidebar{position:fixed;top:56px;bottom:0;left:0;border-right:1px solid var(--bs-border-color);overflow-y:auto}main{margin-left:var(--sb-w)}}
+.sidebar .nav-link{color:var(--bs-body-color);border-radius:.5rem;padding:.65rem .9rem;margin-bottom:.25rem;display:flex;gap:.7rem;align-items:center;font-weight:500}
+.sidebar .nav-link:hover{background:var(--brand-soft)}
+.sidebar .nav-link.active{background:var(--brand);color:#fff}
+/* ---- Cards: same padding, radius, titles and heights ---- */
+.card{border-radius:.75rem;border:1px solid var(--bs-border-color)}
+.card.linkable{transition:transform .15s,border-color .15s}
+.card.linkable:hover{border-color:var(--brand);transform:translateY(-2px)}
+.stat-icon{width:46px;height:46px;border-radius:.65rem;background:var(--brand-soft);color:var(--bs-link-color);display:grid;place-items:center;font-size:1.4rem}
+.page-title{font-size:1.5rem;font-weight:700;margin:0}
+.section-title{font-size:1rem;font-weight:600;margin:0 0 .15rem}
+.hint{font-size:.82rem;color:var(--bs-secondary-color);margin-bottom:.75rem}
+.chart-box,.list-box{height:280px}
+.chart-box{position:relative}
+.list-box{overflow:auto}
+.shelf-card{border-left:4px solid var(--brand)}
+.step .btn{width:100%}
+.step-no{width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;display:inline-grid;place-items:center;font-weight:700;font-size:.9rem;margin-right:.5rem}
+/* ---- Tables ---- */
+.table{font-size:.9rem}
+.table>:not(caption)>*>*{padding:.75rem .9rem;vertical-align:middle}
+.table thead th{background:var(--brand);color:#fff;font-weight:600;white-space:nowrap}
+.badge{font-size:.78rem;font-weight:600;padding:.4em .7em}
+
+.theme-fab{position:fixed;top:1rem;right:1rem;z-index:10;width:42px;height:42px;display:grid;place-items:center;background:var(--bs-body-bg);color:var(--bs-body-color);border:1px solid var(--bs-border-color);border-radius:50%}
+
+/* ---- Hover: charts pop up when the mouse is on them ---- */
+.chart-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+.chart-card:hover{transform:scale(1.03);box-shadow:0 1rem 2rem rgba(0,0,0,.25);border-color:var(--brand);position:relative;z-index:5}
+/* ---- Click-to-sort table headers ---- */
+th[data-sort]{cursor:pointer;user-select:none}
+th[data-sort]:hover{background:var(--brand-dark)}
+th.sorted-asc::after{content:' \25B2';font-size:.7em}
+th.sorted-desc::after{content:' \25BC';font-size:.7em}
+
+/* ---- Simpler tables: reading select, tabs, menu ---- */
+.reading-select{min-width:125px}
+.nav-pills{--bs-nav-pills-link-active-bg:#780228;--bs-nav-pills-link-active-color:#fff}
+.dropdown-menu{font-size:.9rem}
+
+/* ---- Status guide, scrollable tabs, header buttons ---- */
+.guide{display:grid;grid-template-columns:auto 1fr;gap:.5rem .75rem;align-items:center}
+.guide .badge{min-width:84px;text-align:center}
+.tabs-scroll{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:.25rem}
+.tabs-scroll .nav-link{white-space:nowrap}
+.btn-outline-secondary{--bs-btn-color:var(--bs-body-color)}
+/* ---- Phone (under 576px): buttons share the width, table rows become cards ---- */
+@media(max-width:575.98px){
+ .head-actions{width:100%}.head-actions .btn{flex:1}
+ .table-responsive{overflow:visible}
+ .table thead{display:none}
+ .table,.table tbody,.table tr,.table td{display:block;width:100%}
+ .table tbody tr{padding:.75rem .9rem;border-bottom:1px solid var(--bs-border-color)}
+ .table tbody tr:last-child{border-bottom:0}
+ .table>:not(caption)>*>*{padding:.3rem 0;border:0}
+ .table td{white-space:normal}
+ .reading-select{max-width:180px}
+}
+
+/* ===== Pocket Shelf: softer, friendlier look ===== */
+[data-bs-theme=light]{--bs-body-bg:#fdf6f4;--bs-tertiary-bg:#faeeea}
+[data-bs-theme=light] .card{--bs-card-bg:#fff}
+h1,h2,h3,.page-title,.section-title{font-weight:800}
+.card{border-radius:1rem;box-shadow:0 2px 8px rgba(120,2,40,.06)}
+.form-check-input:checked{background-color:var(--brand);border-color:var(--brand)}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.25rem;letter-spacing:.2px}
+/* pastel status badges: same colours as the charts */
+.badge.text-bg-warning{background:#FFE29A!important;color:#5c4400!important}
+.badge.text-bg-danger{background:#FFC2C2!important;color:#8a1c1c!important}
+.badge.text-bg-success{background:#C4EDD0!important;color:#1d6b3a!important}
+.badge.text-bg-info{background:#CDE6FB!important;color:#1b5a8a!important}
+.badge.text-bg-secondary{background:#E3DDF3!important;color:#4a3a73!important}
+.genre-badge{color:#3b2a1f;font-weight:700}
+/* ---- Login: full screen on desktop ---- */
+.login-page{margin-left:0!important;width:100%;min-height:100vh;display:grid;grid-template-columns:1.15fr 1fr}
+.login-hero{flex-direction:column;justify-content:center;color:#fff;padding:clamp(2rem,6vw,5.5rem);background:linear-gradient(135deg,var(--brand),var(--brand-dark))}
+[data-bs-theme=dark] .login-hero{background:linear-gradient(rgba(70,0,25,.5),rgba(0,0,0,.45)),url(../images/autumn-library.jpg) center/cover}
+[data-bs-theme=dark] .login-pane{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),url(../images/dark-library.jpg) center/cover}
+.login-hero h1{font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:800;margin-bottom:.25rem}
+.login-logo{width:104px;height:104px;margin-bottom:1rem;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
+.login-points li{display:flex;align-items:center;gap:.75rem;margin-bottom:.8rem;font-size:1.05rem}
+.login-points i{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18)}
+.login-pane{display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--bs-body-bg)}
+.login-form{width:100%;max-width:410px}
+.demo-box{background:var(--brand-soft);border-radius:.85rem;padding:.9rem 1rem}
+@media(max-width:991.98px){.login-page{grid-template-columns:1fr}}
+/* ---- Picture banners at the top of every page ---- */
+.banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;padding:1.4rem 1.6rem;border-radius:1rem;color:#fff;background:linear-gradient(90deg,rgba(90,1,30,.92),rgba(90,1,30,.45)),var(--bn,url(../images/dark-library.jpg)) center 40%/cover}
+.banner .page-title{color:#fff}
+.banner p{color:rgba(255,255,255,.88)}
+.banner .btn-outline-secondary{--bs-btn-color:#fff;--bs-btn-border-color:rgba(255,255,255,.7);--bs-btn-hover-bg:rgba(255,255,255,.2);--bs-btn-hover-border-color:#fff;--bs-btn-hover-color:#fff}
+.banner .btn-primary{--bs-btn-bg:#fff;--bs-btn-color:#780228;--bs-btn-border-color:#fff;--bs-btn-hover-bg:#FFE1EA;--bs-btn-hover-color:#5a011e;--bs-btn-hover-border-color:#FFE1EA}
+.banner.hero{min-height:210px;padding:2rem;background:linear-gradient(90deg,rgba(90,1,30,.9),rgba(90,1,30,.25)),url(../images/autumn-library.jpg) center 30%/cover}
+.banner.hero .page-title{font-size:2rem}
+.hero-logo{width:64px;height:64px;margin-bottom:.4rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+.list-box.tall{height:360px}
+/* ---- Shelves page ---- */
+.spines{display:flex;align-items:flex-end;gap:6px;overflow-x:auto;padding:.25rem .25rem 0;min-height:176px}
+.spine{flex:0 0 auto;width:40px;height:var(--h);padding:.55rem 0;display:flex;align-items:center;justify-content:center;border-radius:7px 7px 2px 2px;border:1px solid rgba(0,0,0,.1);text-decoration:none;color:#3b2a1f;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 80%,#fff),var(--c) 45%,color-mix(in srgb,var(--c) 85%,#000));transition:transform .15s}
+.spine span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.78rem;font-weight:700;max-height:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.spine:hover{transform:translateY(-8px);color:#3b2a1f}
+.spine.out{background:transparent;border:2px dashed var(--c);color:var(--bs-secondary-color)}
+.plank{height:13px;margin:0 -1rem -1rem;border-radius:0 0 .9rem .9rem;background:linear-gradient(#c8955f,#9b6a3c)}
+.spine-key{display:inline-block;width:12px;height:18px;border-radius:3px;background:#B79CED;vertical-align:middle;margin-right:.35rem}
+.spine-key.ghost{background:transparent;border:2px dashed #B79CED}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

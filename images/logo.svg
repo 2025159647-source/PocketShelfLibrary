@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pocket Shelf logo">
+  <g transform="rotate(-9 18 30)"><rect x="11" y="7" width="12" height="32" rx="3" fill="#F58FAE"/><rect x="11" y="14" width="12" height="3" fill="#fff" opacity=".55"/></g>
+  <rect x="26" y="3" width="12" height="36" rx="3" fill="#FFD36B"/><rect x="26" y="10" width="12" height="3" fill="#fff" opacity=".55"/>
+  <g transform="rotate(10 46 30)"><rect x="40" y="8" width="12" height="31" rx="3" fill="#88D498"/><rect x="40" y="15" width="12" height="3" fill="#fff" opacity=".55"/></g>
+  <path d="M5 30h54v17a11 11 0 0 1-11 11H16A11 11 0 0 1 5 47z" fill="#FFF6EF" stroke="#780228" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M11 35.5h42" stroke="#F58FAE" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="3 3.5"/>
+  <circle cx="24" cy="45" r="2.3" fill="#5a011e"/><circle cx="40" cy="45" r="2.3" fill="#5a011e"/>
+  <path d="M28.5 48.5q3.5 3.6 7 0" fill="none" stroke="#5a011e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="18.5" cy="49" r="3" fill="#F58FAE" opacity=".6"/><circle cx="45.5" cy="49" r="3" fill="#F58FAE" opacity=".6"/>
+</svg>

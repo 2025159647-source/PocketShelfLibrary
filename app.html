@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pocket Shelf - your cosy personal library: dashboard, books, shelves, borrowers and lending">
+<title>Pocket Shelf | Personal Library</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-bs-theme',localStorage.getItem('lms_theme')||'light')</script>
+</head>
+<body>
+<!-- Top navigation bar -->
+<nav class="app-nav navbar px-3 d-flex justify-content-between">
+ <div class="d-flex align-items-center gap-2">
+  <button class="btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sb" aria-label="Menu"><i class="bi bi-list fs-4"></i></button>
+  <a class="navbar-brand m-0 brand" href="#dashboard"><img src="images/logo.svg" alt="" width="36" height="36"><span>Pocket Shelf</span></a>
+ </div>
+ <div class="d-flex align-items-center gap-2">
+  <span class="d-none d-sm-inline small"><i class="bi bi-person-circle me-1"></i><span id="who"></span></span>
+  <button id="theme" class="btn" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+  <button id="out" class="btn" aria-label="Logout"><i class="bi bi-box-arrow-right"></i></button>
+ </div>
+</nav>
+<!-- Sidebar -->
+<aside class="offcanvas-lg offcanvas-start sidebar" id="sb" tabindex="-1">
+ <div class="offcanvas-header d-lg-none"><h5 class="offcanvas-title">Menu</h5><button class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sb"></button></div>
+ <div class="offcanvas-body d-block p-3">
+  <nav class="nav flex-column">
+   <a class="nav-link" href="#dashboard"><i class="bi bi-speedometer2"></i>Dashboard</a>
+   <a class="nav-link" href="#books"><i class="bi bi-journal-bookmark"></i>My Books</a>
+   <a class="nav-link" href="#shelves"><i class="bi bi-bookshelf"></i>Shelves</a>
+   <a class="nav-link" href="#borrowers"><i class="bi bi-people"></i>Borrowers</a>
+   <a class="nav-link" href="#loans"><i class="bi bi-arrow-left-right"></i>Lending</a>
+  </nav>
+ </div>
+</aside>
+<main class="p-3 p-md-4"><div id="view"></div>
+ <footer class="text-center text-body-secondary small mt-4">&copy; 2026 Pocket Shelf &middot; IMS566 Prototype</footer>
+</main>
+<!-- Add Book / Add Member form (shared modal) -->
+<div class="modal fade" id="modal" tabindex="-1"><div class="modal-dialog modal-dialog-centered modal-lg"><form class="modal-content" id="mForm" novalidate>
+ <div class="modal-header"><h5 class="modal-title" id="mTitle"></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+ <div class="modal-body" id="mBody"></div>
+ <div class="modal-footer"><button type="button" id="mCancel" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button><button type="submit" id="mSave" class="btn btn-primary">Save</button></div>
+</form></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
